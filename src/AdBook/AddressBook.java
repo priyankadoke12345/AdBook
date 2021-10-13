@@ -43,10 +43,12 @@ public class AddressBook {
         arrayList.add(new AllContacts(fname, lname, address, city, state, zip, phone, email));
         System.out.println("Data added Successfully");
     }
-    public void NewEdit(String name){
-        for (int i=0;i<arrayList.size();i++){
 
-            if(arrayList.get(i).getFirstName()==name){
+    public void NewEdit(String name) {
+        for (int i = 0; i < arrayList.size(); i++) {
+
+            if (arrayList.get(i).getFirstName() == name) {
+
                 System.out.println("Enter  the new  details");
                 System.out.println("First Name");
                 String fname = scanner.nextLine();
@@ -64,15 +66,24 @@ public class AddressBook {
                 String phone = scanner.nextLine();
                 System.out.println("Email");
                 String email = scanner.nextLine();
-                arrayList.set(i,new AllContacts(fname,lname,address,city,state,zip,phone,email));
+                arrayList.set(i, new AllContacts(fname, lname, address, city, state, zip, phone, email));
                 System.out.println("Data updated successfully");
                 break;
             }
         }
 
-
-
     }
 
+    public void DeleteByName(String name) {
+        for (int i = 0; i < arrayList.size(); i++) {
 
+            if (arrayList.get(i).getFirstName() == name) {
+                arrayList.remove(i);
+                System.out.println("Person Deleted Successfully");
+                break;
+            }
+
+
+        }
+    }
 }
